@@ -14,12 +14,12 @@ def whitematter():
 # Bind predict function to URL
 @app.route('/predict', methods =['POST'])
 def whitematter_predict():
-    from wm_util import  pos_weights, neg_weights, all_features, labels, prevalence, my_function
+    from white_matter_new import  positive, negative, all_features, labels, prevalence, whitemattet_calculator
 
     user_input = request.form.getlist("wm")
     #user_input = ['ependymal', 'delta', 'moyamoya', 'vfspace', 'atrophy', 'vermial_atrophy', 'symmetrical_bg', 'discrete']
     
-    result1 =  my_function(pos_weights, neg_weights, user_input, labels)
+    result1 =  whitemattet_calculator(user_input, positive, negative, all_features, labels, prevalence)
     first = {'Type': 'Score'} 
     
     # Check the output values and retrive the result with html tag based on the value
