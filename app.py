@@ -14,7 +14,7 @@ def whitematter():
 # Bind predict function to URL
 @app.route('/predict', methods =['POST'])
 def whitematter_predict():
-    from white_matter_new import  positive, negative, all_features, labels, prevalence, whitemattet_calculator
+    from wm_util import  positive, negative, all_features, labels, prevalence, whitemattet_calculator
 
     user_input = request.form.getlist("wm")
     #user_input = ['ependymal', 'delta', 'moyamoya', 'vfspace', 'atrophy', 'vermial_atrophy', 'symmetrical_bg', 'discrete']
